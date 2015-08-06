@@ -10,8 +10,9 @@ class FairdomWebsite < Test::Unit::TestCase
     test_title(browser)
   end
 
-  #include the ChromeDriver location in your PATH environment variable
   def test_for_chrome
+    driver_path = File.dirname(__FILE__) + "/../lib/drivers/chromedriver"
+    Selenium::WebDriver::Chrome.driver_path = driver_path
     browser = Selenium::WebDriver.for :chrome
     browser.manage().window.maximize()
     test_title(browser)
