@@ -138,7 +138,7 @@ class FairdomWebsite < Test::Unit::TestCase
     assert_equal('Biotechnology and Biological Sciences Research Council (BBSRC) - BBSRC',browser.title)
 
     browser.get "http://www.bmbf.de/en/"
-    assert_equal('Homepage Federal Ministry of Education and Research - BMBF',browser.title)
+    assert_equal('Homepage - BMBF',browser.title)
 
     browser.get "http://www.nwo.nl/en"
     assert_equal('Welcome to NWO',browser.title)
