@@ -21,143 +21,179 @@ class FairdomWebsite < Test::Unit::TestCase
   private
 
   def test_title(browser)
+    @base_url = "http://fair-dom.org"
+
     #homepage
-    browser.get "http://fair-dom.org"
-    assert_equal('FAIRDOM',browser.title)
-
+    browser.get  @base_url
+    assert_equal('FAIRDOM', browser.title)  
+  
     #about
-    browser.get "http://fair-dom.org/about"
-    assert_equal('About | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/partners"
-    assert_equal('Partners | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/people"
-    assert_equal('People | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/funders"
-    assert_equal('Funders | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/biblio"
-    assert_equal('Publications | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/contact"
-    assert_equal('Contact us | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/website-credits"
-    assert_equal('Credits | FAIRDOM',browser.title)
-
+    browser.get  @base_url +  "/about-fairdom/"
+    assert_equal('About FAIRDOM | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/about-fairdom/people/"
+    assert_equal('People | FAIRDOM', browser.title)  
+  
+    browser.get  @base_url +  "/about-fairdom/funders/"
+    assert_equal('Funders | FAIRDOM', browser.title)  
+  
+    browser.get  @base_url +  "/publications/"
+    assert_equal('Publications | FAIRDOM', browser.title)  
+  
+    browser.get  @base_url +  "/about-fairdom/contact-us/"
+    assert_equal('Contact Us | FAIRDOM', browser.title)
+  
+    #browser.get  @base_url +  "http://fair-dom.org/website-credits"
+    #assert_equal('Credits | FAIRDOM', browser.title)  
+  
     #FAIRDOM software
-    browser.get "http://fair-dom.org/FAIRDOMsoftware"
-    assert_equal('FAIRDOM Software | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/seek"
-    assert_equal('SEEK | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/openbis"
-    assert_equal('openBIS | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/rightfield"
-    assert_equal('Rightfield | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/jws-online"
-    assert_equal('JWS Online | FAIRDOM',browser.title)
-
+    browser.get  @base_url +  "/platform/"
+    assert_equal('FAIRDOM Platform | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/platform/seek/"
+    assert_equal('SEEK | FAIRDOM', browser.title)  
+  
+    browser.get  @base_url +  "/platform/openbis/"
+    assert_equal('openBis | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/platform/rightfield/"
+    assert_equal('Rightfield | FAIRDOM', browser.title)  
+  
+    browser.get  @base_url +  "/jws-online/"
+    assert_equal('JWS Online | FAIRDOM', browser.title)  
+  
     #Community
-    browser.get "http://fair-dom.org/community"
-    assert_equal('Community | FAIRDOM',browser.title)
+    browser.get  @base_url +  "/communities/"
+    assert_equal('Communities | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/communities/pals"
+    assert_equal('PALs | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/communities/pals/pals-gallery/"
+    assert_equal('PALS Gallery | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/communities/samples-club/"
+    assert_equal('Samples Club | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/communities/data-management-foundry/"
+    assert_equal('Data Management Foundry | FAIRDOM', browser.title)
+  
+    # Knowledge Hub
 
-    browser.get "http://fair-dom.org/blogs"
-    assert_equal('The FAIRDOM blog | FAIRDOM',browser.title)
+    browser.get  @base_url +  "/knowledgehub/"
+    assert_equal('Knowledge Hub | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/knowledgehub/data-and-model-management/"
+    assert_equal('Data and Model Management | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/knowledgehub/data-management-checklist/"
+    assert_equal('Data Management Checklist | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/knowledgehub/community-standards/"
+    assert_equal('Community Standards | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/knowledgehub/data-and-model-repositories-and-commons/"
+    assert_equal('Data and Model Repositories and Commons | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/knowledgehub/specialised-software/"
+    assert_equal('Specialised Software | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/knowledgehub/webinars-2/"
+    assert_equal('Webinars | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/knowledgehub/reports/"
+    assert_equal('Reports | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/knowledgehub/presentations/"
+    assert_equal('Presentations | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/knowledgehub/tutorials/"
+    assert_equal('Tutorials | FAIRDOM', browser.title)
+  
+    # Partners
 
-    browser.get "http://fair-dom.org/blog-kicking-off-with-the-pals"
-    assert_equal('Kicking-off with the PALs | FAIRDOM',browser.title)
+    browser.get  @base_url +  "/partners/"
+    assert_equal('Partners | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/partners/erasysapp/"
+    assert_equal('ERASysAPP | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/partners/sysmo/"
+    assert_equal('SysMO | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/partners/virtual-liver-network-vln/"
+    assert_equal('Virtual Liver Network (VLN) | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/partners/emsl/"
+    assert_equal('EMSL | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/partners/synbiochem/"
+    assert_equal('SYNBIOCHEM | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/partners/synthsys/"
+    assert_equal('SynthSys | FAIRDOM', browser.title)
+  
+    #blog
 
-    browser.get "http://fair-dom.org/samples"
-    assert_equal('Samples Working Group | FAIRDOM',browser.title)
-
+    browser.get  @base_url +  "/blog/"
+    assert_equal('Blog | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/2015/09/22/reproducible-and-citable-data-and-models-workshop/"
+    assert_equal('Reproducible and Citable Data and Models Workshop | FAIRDOM', browser.title)
+  
     #Events
-    browser.get "http://fair-dom.org/events"
-    assert_equal('Events | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/event-weblab-2015"
-    assert_equal('2015 Workshop on the Cardiac Electrophysiology Web Lab | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/past-events"
-    assert_equal('Past Events | FAIRDOM',browser.title)
-
-    #Friends
-    browser.get "http://fair-dom.org/friends"
-    assert_equal('Friends | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/erasysapp"
-    assert_equal('ERASysAPP | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/SYNBIOCHEM"
-    assert_equal('SYNBIOCHEM | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/synthsys"
-    assert_equal('SynthSys | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/EMSL"
-    assert_equal('EMSL | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/SysMo"
-    assert_equal('SysMO | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/VLN"
-    assert_equal('Virtual Liver Network (VLN) | FAIRDOM',browser.title)
-
-    #Help
-    browser.get "http://fair-dom.org/help"
-    assert_equal('Help | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/whatisdataandmodelmanagement"
-    assert_equal('What is data and model management? | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/managementchecklist"
-    assert_equal('Data and Model Management Checklist | FAIRDOM',browser.title)
-
+    browser.get  @base_url +  "/events"
+    assert_equal('Events | FAIRDOM', browser.title)  
+  
+    browser.get  @base_url +  "/events/fundamentals-of-modelling-metabolism-and-signalling-in-biology-2/"
+    assert_equal('Fundamentals of modelling metabolism and signalling in biology | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/past-events"
+    assert_equal('Past Events | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/upcoming-events/"
+    assert_equal('Upcoming Events | FAIRDOM', browser.title)
+  
     #News
-    browser.get "http://fair-dom.org/news"
-    assert_equal('Recent news | FAIRDOM',browser.title)
-
-    browser.get "http://fair-dom.org/news-talk-demo-ismb-2015"
-    assert_equal('FAIRDOM at ISMB 2015 | FAIRDOM',browser.title)
-
+    browser.get  @base_url +  "/news"
+    assert_equal('News | FAIRDOM', browser.title)
+  
+    browser.get  @base_url +  "/2016/01/26/save-the-date-15th-september-2016-fairdom-user-meeting-as-a-satellite-of-icsb-2016/"
+    assert_equal('Save the date (15th September 2016): FAIRDOM User Meeting as a Satellite of ICSB 2016 | FAIRDOM', browser.title)
+  
     #Imprint
-    browser.get "http://fair-dom.org/imprint"
-    assert_equal('Imprint | FAIRDOM',browser.title)
-
+    #browser.get  @base_url +  "http://fair-dom.org/imprint"
+    #assert_equal('Imprint | FAIRDOM', browser.title)  
+  
 
     #external links
     browser.get "http://www.systemsx.ch/"
-    assert_equal('SystemsX.ch - The Swiss Initiative in Systems Biology: systemsx.ch',browser.title)
-
+    assert_equal('SystemsX.ch - The Swiss Initiative in Systems Biology: systemsx.ch', browser.title)  
+  
     browser.get "http://www.bbsrc.ac.uk/"
-    assert_equal('Biotechnology and Biological Sciences Research Council (BBSRC) - BBSRC',browser.title)
-
+    assert_equal('Biotechnology and Biological Sciences Research Council (BBSRC) - BBSRC', browser.title)  
+  
     browser.get "http://www.bmbf.de/en/"
-    assert_equal('Homepage - BMBF',browser.title)
-
+    assert_equal('Homepage - BMBF', browser.title)  
+  
     browser.get "http://www.nwo.nl/en"
-    assert_equal('Welcome to NWO',browser.title)
-
+    assert_equal('Welcome to NWO', browser.title)  
+  
     browser.get "https://twitter.com/fairdom_eu"
-    assert_equal('FAIRDOM (@FAIRDOM_eu) | Twitter',browser.title)
-
-    browser.get "http://fair-dom.org/rss.xml"
+    assert_equal('FAIRDOM (@FAIRDOM_eu) | Twitter', browser.title)  
+  
+    browser.get @base_url + "/feed/"
     if browser.browser==:firefox
-      assert_equal('FAIRDOM feed',browser.title)
-    elsif browser.browser==:chrome
-      assert_equal('http://fair-dom.org/rss.xml',browser.title)
-    end
+      assert_equal('FAIRDOM', browser.title)
+      elsif browser.browser==:chrome
+      assert_equal('http://fair-dom.org/feed/', browser.title)
+      end
 
 
     #non-existing page
-    browser.get "http://fair-dom.org/blabla"
-    assert_equal('Page not found | FAIRDOM',browser.title)
-    browser.quit
+    browser.get  @base_url +  "/blabla"
+    assert_equal('Page not found | FAIRDOM', browser.title)  
+      browser.quit
   end
 
 end
